@@ -27,6 +27,49 @@ void dnaToMrna (char aSeq [SIZE], char mRNA[SIZE]); //done
 void translateDnaToMrnaProteins (char aSeq[SIZE]); //done
 char getCode(char protein[3]);
 
+int main() { //testing out my functions to see if they work
+   int result1, result2, result3, x, i;
+   char dnaStrand1[SIZE] = {"GCTA"};
+   char dnaStrand2[SIZE] = {"CGAT"};
+
+   input1 = 'A';
+   input2 = 'T';
+
+   result1 = isBasePair(input1, input2);
+
+   if (result1 == 1){
+      printf("%c and %c are a pair. \n", input1, input2);
+   }
+   else if (result1 == 0) {
+      printf("These are not a pair. \n");
+   }
+
+   result2 = isItaDnaSequence (dnaStrand1, dnaStrand2);
+
+   if (result2 == 1) {
+      printf("These two DNA strands are a pair. \n");
+   }
+
+   else if (result2 == 0) {
+      printf("These two DNA strands are not a pair. \n");
+   }
+
+   reverse(dnaStrand1);
+   printf("%s\n", dnaStrand1);
+
+   complementIt(dnaStrand1);
+   printf("%s\n", dnaStrand1);
+
+   result3 = isItPalindrome(dnaStrand1);
+
+   if (result3 == 1) {
+      printf("This is a palindrome\n");
+   }
+   else if (result3 == 0) {
+      printf("This is not a palindrome\n");
+   }
+}
+
 
 //donefunction1 - checks to see if they are valid base pairs
 bool isBasePair (char neu1, char neu2) {
